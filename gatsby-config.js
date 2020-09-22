@@ -1,7 +1,7 @@
-const globalSetting = {
+module.exports = {
   siteMetadata: {
-    title: `Devenv`,
-    description: `ぼくのかんがえたさいきょうのかいはつかんきょうです`,
+    title: `pokemon-name-searcher`,
+    description: `ポケモンの名前を検索できるアプリです`,
     author: `miyagon`,
   },
 
@@ -24,10 +24,10 @@ const globalSetting = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/eggman-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -35,14 +35,3 @@ const globalSetting = {
     // `gatsby-plugin-offline`,
   ],
 };
-
-module.exports =
-  process.env.MODE === 'production'
-    ? globalSetting
-    : {
-        ...globalSetting,
-        proxy: {
-          prefix: '/api',
-          url: process.env.DEV_API_URL,
-        },
-      };
